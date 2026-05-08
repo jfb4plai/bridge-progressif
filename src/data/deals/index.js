@@ -12,9 +12,14 @@ import deal006 from './level1/006-ouverture-2trefle.json'
 import deal007 from './level1/007-ouverture-2sa.json'
 import deal008 from './level1/008-ouverture-1carreau.json'
 
+import deal101 from './level2/001-overcall-1pique.json'
+import deal102 from './level2/002-reponse-sous-pression.json'
+import deal103 from './level2/003-overcall-coeur.json'
+
 export const ALL_DEALS = [
   deal001, deal002, deal003, deal004,
   deal005, deal006, deal007, deal008,
+  deal101, deal102, deal103,
 ]
 
 /** Donnes disponibles pour un niveau donné */

@@ -127,7 +127,7 @@ export const computeAiBid = (seat, hand, history, opts = {}) => {
 }
 
 /** Contre-enchère simple (L2+) : 5+ cartes, 12-17H, au palier 1 ou 2 */
-const computeOvercall = (hand, opBid, history, system) => {
+export const computeOvercall = (hand, opBid, history, system) => {
   const hcp  = handHcp(hand)
   const lens = suitLengths(hand)
   const last = lastRealBid(history)
@@ -154,10 +154,12 @@ const computeOvercall = (hand, opBid, history, system) => {
  * @returns {{ correct, expected, played, key, context, xpDelta, explanation }}
  */
 export const evaluatePlayerBid = (playerBid, hand, history, { system = 'sf' } = {}) => {
-  const partnerBids  = history.filter(h => h.seat === 'N' && h.bid.level != null)
-  const mySouthBids  = history.filter(h => h.seat === 'S' && h.bid.level != null)
-  const anyOpen      = history.some(h => h.bid.level != null)
-  const lastPartner  = partnerBids.at(-1)
+  const partnerBids   = history.filter(h => h.seat === 'N' && h.bid.level != null)
+  const mySouthBids   = history.filter(h => h.seat === 'S' && h.bid.level != null)
+  const opponentBids  = history.filter(h => ['E', 'W'].includes(h.seat) && h.bid.level != null)
+  const anyOpen       = history.some(h => h.bid.level != null)
+  const lastPartner   = partnerBids.at(-1)
+  const lastOpponent  = opponentBids.at(-1)
 
   let rec
   let explanations = {}
@@ -168,12 +170,19 @@ export const evaluatePlayerBid = (playerBid, hand, history, { system = 'sf' } = 
     rec = { bid: r.bid, key: r.key }
     explanations = OPENING_EXPLANATIONS[r.key] ?? {}
   } else if (lastPartner && mySouthBids.length === 0) {
-    // Sud répond à l'ouverture de Nord
+    // Sud répond à l'ouverture de Nord (avec ou sans intervention adverse)
     const r = recommendResponse(hand, lastPartner.bid, { system })
     rec = { bid: r.bid, key: r.key }
     explanations = RESPONSE_EXPLANATIONS[r.key] ?? {}
+  } else if (lastOpponent && mySouthBids.length === 0 && !lastPartner) {
+    // Sud overcalle l'ouverture adverse (N n'a pas encore ouvert)
+    const overcall = computeOvercall(hand, lastOpponent.bid, history, system)
+    rec = overcall
+      ? { bid: overcall, key: 'overcall' }
+      : { bid: PASS, key: 'pass_overcall' }
+    explanations = OPENING_EXPLANATIONS[rec.key] ?? {}
   } else {
-    // Rebid / suite — pour l'instant on accepte tout et on passe
+    // Rebid / suite — on accepte tout (pas encore évalué)
     rec = { bid: PASS, key: 'pass_default' }
     explanations = OPENING_EXPLANATIONS['pass_default'] ?? {}
   }

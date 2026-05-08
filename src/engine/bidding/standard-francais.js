@@ -174,6 +174,14 @@ export const OPENING_EXPLANATIONS = {
     fr: 'Main ne remplit pas les critères d\'ouverture.',
     en: 'Hand does not meet opening criteria.',
   },
+  overcall: {
+    fr: '5+ cartes dans une couleur, 12-17H → contre-enchère simple au palier minimum.',
+    en: '5+ cards in a suit, 12-17 HCP → simple overcall at the lowest level.',
+  },
+  pass_overcall: {
+    fr: 'Main insuffisante pour contre-enchérir (< 12H ou pas de couleur 5ème).',
+    en: 'Hand too weak to overcall (< 12 HCP or no 5-card suit).',
+  },
 }
 
 export const RESPONSE_EXPLANATIONS = {

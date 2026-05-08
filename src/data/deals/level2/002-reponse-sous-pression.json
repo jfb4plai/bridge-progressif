@@ -1,0 +1,63 @@
+{
+  "slug": "l2-002-reponse-sous-pression",
+  "level": 2,
+  "title_fr": "Soutenir malgré l'intervention adverse",
+  "title_en": "Supporting despite opponent's overcall",
+  "concepts": ["competitive_response"],
+
+  "south": [
+    {"suit":"S","rank":"Q"},{"suit":"S","rank":"J"},{"suit":"S","rank":"8"},{"suit":"S","rank":"7"},
+    {"suit":"H","rank":"3"},{"suit":"H","rank":"2"},
+    {"suit":"D","rank":"K"},{"suit":"D","rank":"6"},{"suit":"D","rank":"5"},{"suit":"D","rank":"4"},
+    {"suit":"C","rank":"T"},{"suit":"C","rank":"3"},{"suit":"C","rank":"2"}
+  ],
+  "north": [
+    {"suit":"S","rank":"A"},{"suit":"S","rank":"K"},{"suit":"S","rank":"T"},{"suit":"S","rank":"9"},{"suit":"S","rank":"6"},
+    {"suit":"H","rank":"J"},{"suit":"H","rank":"4"},
+    {"suit":"D","rank":"Q"},{"suit":"D","rank":"7"},{"suit":"D","rank":"2"},
+    {"suit":"C","rank":"K"},{"suit":"C","rank":"J"},{"suit":"C","rank":"5"}
+  ],
+  "east": [
+    {"suit":"S","rank":"4"},
+    {"suit":"H","rank":"K"},{"suit":"H","rank":"Q"},{"suit":"H","rank":"T"},{"suit":"H","rank":"6"},{"suit":"H","rank":"5"},
+    {"suit":"D","rank":"A"},{"suit":"D","rank":"J"},{"suit":"D","rank":"3"},
+    {"suit":"C","rank":"Q"},{"suit":"C","rank":"9"},{"suit":"C","rank":"7"},{"suit":"C","rank":"4"}
+  ],
+  "west": [
+    {"suit":"S","rank":"5"},{"suit":"S","rank":"3"},{"suit":"S","rank":"2"},
+    {"suit":"H","rank":"A"},{"suit":"H","rank":"9"},{"suit":"H","rank":"8"},{"suit":"H","rank":"7"},
+    {"suit":"D","rank":"T"},{"suit":"D","rank":"9"},{"suit":"D","rank":"8"},
+    {"suit":"C","rank":"A"},{"suit":"C","rank":"8"},{"suit":"C","rank":"6"}
+  ],
+
+  "dealer": "N",
+  "vulnerability": "none",
+
+  "optimal_contract": { "level": 2, "suit": "S", "declarer": "N", "doubled": 0 },
+  "optimal_tricks": 8,
+
+  "bidding_sequence": [
+    {"seat":"N","bid":{"level":1,"suit":"S"},"note_fr":"1♠ : 14H, 5 piques — ouverture majeure","note_en":"1♠: 14 HCP, 5 spades — major opening"},
+    {"seat":"E","bid":{"level":2,"suit":"H"},"note_fr":"2♥ : 12H, 5 cœurs — contre-enchère adverse","note_en":"2♥: 12 HCP, 5 hearts — opponent overcall"},
+    {"seat":"S","bid":{"level":2,"suit":"S"},"note_fr":"2♠ : 6H, 4 piques — soutien malgré l'intervention","note_en":"2♠: 6 HCP, 4 spades — support despite overcall"},
+    {"seat":"W","bid":{"special":"pass"}},
+    {"seat":"N","bid":{"special":"pass"}},
+    {"seat":"E","bid":{"special":"pass"}}
+  ],
+
+  "play_line": {
+    "opening_lead": {"suit":"H","rank":"A"},
+    "notes_fr": ["Déclarant réalise 8 levées : 5♠ + ♦K + 2♣."],
+    "notes_en": ["Declarer makes 8 tricks: 5♠ + ♦K + 2♣."]
+  },
+
+  "concept": {
+    "slug": "competitive_response",
+    "title_fr": "Répondre sous pression adverse",
+    "title_en": "Responding under competitive pressure",
+    "body_fr": "Quand un adversaire contre-enchérit entre l'ouverture de votre partenaire et votre réponse, vous devez quand même annoncer si vous avez les conditions. Avec un fit (4+ cartes dans la couleur d'ouverture) et 6-9H, soutenez au palier 2 comme si l'intervention n'avait pas eu lieu. Cela montre votre fit et complique la tâche des adversaires.",
+    "body_en": "When an opponent overcalls between partner's opening and your response, you must still bid if you have the values. With a fit (4+ cards in partner's suit) and 6-9 HCP, raise to the 2-level as if the overcall hadn't happened.",
+    "key_rule_fr": "Fit 4+ cartes + 6-9H → soutenir malgré l'intervention.",
+    "key_rule_en": "4+ card fit + 6-9 HCP → support despite the overcall."
+  }
+}
