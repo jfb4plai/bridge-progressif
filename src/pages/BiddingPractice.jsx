@@ -175,6 +175,9 @@ export default function BiddingPractice({ profile, onXpGain }) {
       {/* Rappel comptage HCP */}
       <HcpReminder lang={lang} />
 
+      {/* Règles des annonces */}
+      <BiddingRules lang={lang} level={level} />
+
       {/* Historique enchères */}
       {auctionHistory.length > 0 && (
         <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
@@ -235,6 +238,83 @@ export default function BiddingPractice({ profile, onXpGain }) {
         </div>
       )}
 
+    </div>
+  )
+}
+
+// ─── Règles des annonces ──────────────────────────────────────────────────────
+
+function BiddingRules({ lang, level }) {
+  const [open, setOpen] = useState(false)
+
+  const label = lang === 'fr' ? 'Règles des annonces' : 'Bidding rules'
+
+  const rules = lang === 'fr' ? [
+    { bid: 'PASS',  cond: '< 12H',                           note: 'main trop faible' },
+    { bid: '1♣',   cond: '12-21H, ♣ > ♦ (ou ♣ = ♦)',       note: 'pas de majeure 5e, pas 15-17H régulier' },
+    { bid: '1♦',   cond: '12-21H, ♦ ≥ ♣',                  note: 'pas de majeure 5e, pas 15-17H régulier' },
+    { bid: '1♥',   cond: '12-21H, 5+ ♥',                    note: 'priorité à la majeure' },
+    { bid: '1♠',   cond: '12-21H, 5+ ♠',                    note: 'priorité à la majeure' },
+    { bid: '1SA',  cond: '15-17H, jeu régulier',             note: 'pas de chicane, pas de singleton' },
+    { bid: '2SA',  cond: '20-21H, jeu régulier',             note: '' },
+    { bid: '2♣',   cond: '≥ 22H  — ou ≥ 19H irrégulier',   note: 'forcing absolu' },
+  ] : [
+    { bid: 'PASS',  cond: '< 12 HCP',                           note: 'hand too weak' },
+    { bid: '1♣',   cond: '12-21 HCP, ♣ > ♦ (or ♣ = ♦)',       note: 'no 5-card major, not 15-17 balanced' },
+    { bid: '1♦',   cond: '12-21 HCP, ♦ ≥ ♣',                  note: 'no 5-card major, not 15-17 balanced' },
+    { bid: '1♥',   cond: '12-21 HCP, 5+ ♥',                    note: 'major first' },
+    { bid: '1♠',   cond: '12-21 HCP, 5+ ♠',                    note: 'major first' },
+    { bid: '1NT',  cond: '15-17 HCP, balanced',                 note: 'no void/singleton' },
+    { bid: '2NT',  cond: '20-21 HCP, balanced',                 note: '' },
+    { bid: '2♣',   cond: '≥ 22 HCP  — or ≥ 19 HCP unbalanced', note: 'absolute force' },
+  ]
+
+  const overcallRules = lang === 'fr'
+    ? [{ bid: 'Contre-enchère', cond: '5+ cartes, 12-17H', note: 'au palier minimum légal' }]
+    : [{ bid: 'Overcall',       cond: '5+ cards, 12-17 HCP', note: 'at the minimum legal level' }]
+
+  return (
+    <div className="rounded-xl border border-stone-200 bg-stone-50 text-sm overflow-hidden">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-4 py-2.5 text-stone-600 hover:bg-stone-100 transition-colors"
+      >
+        <span className="font-semibold text-xs uppercase tracking-wide">{label}</span>
+        <span className="text-stone-400 text-xs">{open ? '▲' : '▼'}</span>
+      </button>
+
+      {open && (
+        <div className="px-4 pb-3">
+          {/* Ouvertures */}
+          <div className="space-y-1">
+            {rules.map(({ bid, cond, note }) => (
+              <div key={bid} className="flex items-baseline gap-2 text-xs">
+                <span className="font-bold text-stone-800 w-10 shrink-0 font-card">{bid}</span>
+                <span className="text-emerald-700 font-medium">{cond}</span>
+                {note && <span className="text-stone-400 ml-auto text-right hidden sm:block">{note}</span>}
+              </div>
+            ))}
+          </div>
+
+          {/* Contre-enchères (L2+) */}
+          {level >= 2 && (
+            <>
+              <div className="border-t border-stone-200 mt-2 pt-2 text-xs text-stone-500 font-semibold uppercase tracking-wide mb-1">
+                {lang === 'fr' ? 'Compétition' : 'Competition'}
+              </div>
+              <div className="space-y-1">
+                {overcallRules.map(({ bid, cond, note }) => (
+                  <div key={bid} className="flex items-baseline gap-2 text-xs">
+                    <span className="font-bold text-stone-800 w-24 shrink-0">{bid}</span>
+                    <span className="text-emerald-700 font-medium">{cond}</span>
+                    {note && <span className="text-stone-400 ml-auto text-right hidden sm:block">{note}</span>}
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
     </div>
   )
 }
