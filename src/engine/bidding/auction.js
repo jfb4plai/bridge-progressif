@@ -233,9 +233,12 @@ export const processAuction = (startHistory, deal, opts = {}) => {
     const hand    = deal[handKey] ?? []
     const result  = computeAiBid(seat, hand, history, opts)
 
+    // Sécurité : si l'enchère calculée est illégale (en dessous du dernier bid), passer
+    const legalBid = isLegalBid(result.bid, history) ? result.bid : PASS
+
     history = [...history, {
       seat,
-      bid:     result.bid,
+      bid:     legalBid,
       aiKey:   result.key,
       context: result.context,
       isAi:    true,
@@ -248,6 +251,14 @@ export const processAuction = (startHistory, deal, opts = {}) => {
 }
 
 // ─── Utilitaires ─────────────────────────────────────────────────────────────
+
+/** Vérifie qu'une enchère est légale (niveau > dernier bid réel) */
+const isLegalBid = (bid, history) => {
+  if (bid.special) return true  // pass/dbl/rdbl toujours légaux (simplifié)
+  const last = lastRealBid(history)
+  if (!last) return true
+  return bidOrdinal(bid.level, bid.suit) > bidOrdinal(last.bid.level, last.bid.suit)
+}
 
 const bidsEqual = (a, b) => {
   if (!a || !b) return false
