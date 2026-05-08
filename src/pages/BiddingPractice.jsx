@@ -4,7 +4,7 @@
  * - L'IA annonce pour N / E / O (E/O passent au niveau 1)
  * - Évaluation de chaque bid de Sud avec feedback et XP
  */
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
@@ -47,6 +47,7 @@ export default function BiddingPractice({ profile, onXpGain }) {
   // Évaluations de chaque bid de Sud
   const [evaluations, setEvals]   = useState([])  // [{correct, expected, played, ...}]
   const [lastEval,    setLastEval] = useState(null)
+  const totalXpRef = useRef(0)  // cumul XP de la donne en cours
 
   // Indices
   const [hintRevealed, setHintR] = useState(false)
@@ -63,6 +64,7 @@ export default function BiddingPractice({ profile, onXpGain }) {
     setHintR(false)
     setHintsU(0)
     setWaiting(false)
+    totalXpRef.current = 0
 
     // Avancer jusqu'au premier tour de Sud (ou fin si tout le monde passe avant)
     const result = processAuction([], currentDeal, { system, level })
@@ -89,12 +91,29 @@ export default function BiddingPractice({ profile, onXpGain }) {
 
     // XP
     onXpGain?.(eval_.xpDelta)
+    totalXpRef.current += eval_.xpDelta ?? 0
 
     // Continuer la séquence
     const result = processAuction(newHistory, deal, { system, level })
     setHistory(result.history)
     setWaiting(result.waitingForPlayer)
-    if (result.done) { setDone(true); setContract(result.contract) }
+    if (result.done) {
+      setDone(true)
+      setContract(result.contract)
+      // Navigation vers le bilan (légère pause pour laisser le state se mettre à jour)
+      setTimeout(() => {
+        navigate('/debrief', {
+          state: {
+            deal,
+            contract: result.contract,
+            evaluations: [...evaluations, eval_],
+            auctionHistory: result.history,
+            totalXpDelta: totalXpRef.current,
+            lang,
+          }
+        })
+      }, 800)
+    }
   }, [deal, waitingForPlayer, auctionDone, auctionHistory, system, level, onXpGain])
 
   // ─── Indice ─────────────────────────────────────────────────────────────────
@@ -187,19 +206,10 @@ export default function BiddingPractice({ profile, onXpGain }) {
         </div>
       )}
 
-      {/* Contrat final */}
-      {auctionDone && contract && (
-        <div className="bg-stone-50 rounded-xl border border-stone-200 p-4 text-sm">
-          <div className="font-semibold text-stone-700 mb-1">
-            {lang === 'fr' ? 'Contrat final' : 'Final contract'} : <span className="text-emerald-700 text-base">{contractStr}</span>
-            {' '}— {lang === 'fr' ? 'déclarant' : 'declarer'} : {contract.declarer}
-          </div>
-          {evaluations.length > 0 && (
-            <div className="text-xs text-stone-500 mt-1">
-              {evaluations.filter(e => e.correct).length}/{evaluations.length}{' '}
-              {lang === 'fr' ? 'enchères correctes' : 'correct bids'}
-            </div>
-          )}
+      {/* Transition vers le bilan */}
+      {auctionDone && (
+        <div className="rounded-xl bg-stone-50 border border-stone-200 p-4 text-sm text-stone-500 text-center animate-pulse">
+          {lang === 'fr' ? 'Redirection vers le bilan…' : 'Loading summary…'}
         </div>
       )}
 
@@ -224,23 +234,6 @@ export default function BiddingPractice({ profile, onXpGain }) {
         </div>
       )}
 
-      {/* Navigation après fin de mise */}
-      {auctionDone && (
-        <div className="flex gap-3">
-          <button
-            onClick={handleNextDeal}
-            className="flex-1 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors"
-          >
-            {lang === 'fr' ? 'Donne suivante' : 'Next deal'}
-          </button>
-          <button
-            onClick={() => navigate('/')}
-            className="flex-1 py-2.5 rounded-xl bg-stone-100 text-stone-700 font-semibold hover:bg-stone-200 transition-colors"
-          >
-            {t('debrief.back_dashboard')}
-          </button>
-        </div>
-      )}
     </div>
   )
 }

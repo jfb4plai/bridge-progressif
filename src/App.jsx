@@ -10,6 +10,7 @@ import Dashboard          from './pages/Dashboard.jsx'
 import BiddingPractice    from './pages/BiddingPractice.jsx'
 import PlayPractice       from './pages/PlayPractice.jsx'
 import Settings           from './pages/Settings.jsx'
+import DealDebrief        from './pages/DealDebrief.jsx'
 
 export default function App() {
   const [session, setSession] = useState(undefined)  // undefined = loading
@@ -88,6 +89,7 @@ function AppShell({ userId }) {
           <Route path="/bidding"  element={<BiddingPractice profile={profile} onXpGain={addXp} />} />
           <Route path="/play"     element={<PlayPractice    profile={profile} onXpGain={addXp} />} />
           <Route path="/full"     element={<BiddingPractice profile={profile} onXpGain={addXp} />} />
+          <Route path="/debrief"  element={<DealDebrief  profile={profile} />} />
           <Route path="/settings" element={<Settings profile={profile} onUpdate={updateSettings} />} />
           <Route path="*"         element={<Navigate to="/" replace />} />
         </Routes>
