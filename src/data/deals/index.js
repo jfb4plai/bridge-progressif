@@ -1,7 +1,8 @@
 /**
- * Registre de toutes les donnes pré-construites
+ * Registre de toutes les donnes pré-construites + générateur
  * Utilisé pour la rotation et la sélection par niveau
  */
+import { generateRandomDeal } from './generator.js'
 
 import deal001 from './level1/001-impasse-pique.json'
 import deal002 from './level1/002-ouverture-1sa.json'
@@ -28,19 +29,30 @@ export const dealsForLevel = (level) =>
 
 /**
  * Sélectionne la prochaine donne à jouer.
- * Utilise localStorage pour éviter les répétitions.
+ * - Premier cycle : toutes les donnes pré-construites dans l'ordre
+ * - Cycles suivants : alternance 50/50 entre pré-construit et généré
  * @param {number} level  — niveau du joueur (1-5)
- * @returns {Object}      — deal JSON
+ * @param {string} system — système d'enchères
+ * @returns {Object}      — deal object
  */
-export const nextDeal = (level = 1) => {
-  const pool    = dealsForLevel(level)
-  if (pool.length === 0) return ALL_DEALS[0]
+export const nextDeal = (level = 1, system = 'sf') => {
+  const pool = dealsForLevel(level)
+  if (pool.length === 0) return generateRandomDeal(level, system)
 
-  const lastKey = `bridge_last_deal_l${level}`
-  const lastIdx = parseInt(localStorage.getItem(lastKey) ?? '-1', 10)
+  const lastKey  = `bridge_last_deal_l${level}`
+  const countKey = `bridge_deal_count_l${level}`
+  const lastIdx  = parseInt(localStorage.getItem(lastKey) ?? '-1', 10)
+  const count    = parseInt(localStorage.getItem(countKey) ?? '0', 10)
+
+  // Après le premier cycle complet : 50% de chance d'avoir une donne générée
+  if (count >= pool.length && Math.random() < 0.5) {
+    localStorage.setItem(countKey, String(count + 1))
+    return generateRandomDeal(level, system)
+  }
+
   const nextIdx = (lastIdx + 1) % pool.length
-
   localStorage.setItem(lastKey, String(nextIdx))
+  localStorage.setItem(countKey, String(count + 1))
   return pool[nextIdx]
 }
 

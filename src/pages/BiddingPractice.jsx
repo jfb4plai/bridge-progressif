@@ -34,9 +34,9 @@ export default function BiddingPractice({ profile, onXpGain }) {
   const [deal, setDeal] = useState(null)
 
   useEffect(() => {
-    const d = nextDeal(level)
+    const d = nextDeal(level, system)
     setDeal(d)
-  }, [level])
+  }, [level, system])
 
   // ─── Enchères ────────────────────────────────────────────────────────────────
   const [auctionHistory,  setHistory]    = useState([])
@@ -127,7 +127,7 @@ export default function BiddingPractice({ profile, onXpGain }) {
 
   // ─── Donne suivante ─────────────────────────────────────────────────────────
   const handleNextDeal = () => {
-    const d = nextDeal(level)
+    const d = nextDeal(level, system)
     setDeal(d)
   }
 
