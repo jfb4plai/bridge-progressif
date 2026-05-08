@@ -1,0 +1,63 @@
+{
+  "slug": "l1-007-ouverture-2sa",
+  "level": 1,
+  "title_fr": "Ouvrir 2SA (20-21H)",
+  "title_en": "Opening 2NT (20-21 HCP)",
+  "concepts": ["nt_opening_strong"],
+
+  "south": [
+    {"suit":"S","rank":"A"},{"suit":"S","rank":"K"},{"suit":"S","rank":"J"},
+    {"suit":"H","rank":"A"},{"suit":"H","rank":"Q"},{"suit":"H","rank":"J"},
+    {"suit":"D","rank":"K"},{"suit":"D","rank":"Q"},{"suit":"D","rank":"T"},{"suit":"D","rank":"9"},
+    {"suit":"C","rank":"J"},{"suit":"C","rank":"9"},{"suit":"C","rank":"8"}
+  ],
+  "north": [
+    {"suit":"S","rank":"Q"},{"suit":"S","rank":"T"},{"suit":"S","rank":"5"},
+    {"suit":"H","rank":"K"},{"suit":"H","rank":"T"},{"suit":"H","rank":"9"},{"suit":"H","rank":"8"},
+    {"suit":"D","rank":"A"},{"suit":"D","rank":"J"},{"suit":"D","rank":"8"},
+    {"suit":"C","rank":"K"},{"suit":"C","rank":"Q"},{"suit":"C","rank":"7"}
+  ],
+  "east": [
+    {"suit":"S","rank":"9"},{"suit":"S","rank":"8"},{"suit":"S","rank":"7"},
+    {"suit":"H","rank":"7"},{"suit":"H","rank":"6"},{"suit":"H","rank":"5"},
+    {"suit":"D","rank":"7"},{"suit":"D","rank":"6"},{"suit":"D","rank":"5"},{"suit":"D","rank":"4"},
+    {"suit":"C","rank":"A"},{"suit":"C","rank":"T"},{"suit":"C","rank":"6"}
+  ],
+  "west": [
+    {"suit":"S","rank":"6"},{"suit":"S","rank":"4"},{"suit":"S","rank":"3"},{"suit":"S","rank":"2"},
+    {"suit":"H","rank":"4"},{"suit":"H","rank":"3"},{"suit":"H","rank":"2"},
+    {"suit":"D","rank":"3"},{"suit":"D","rank":"2"},
+    {"suit":"C","rank":"5"},{"suit":"C","rank":"4"},{"suit":"C","rank":"3"},{"suit":"C","rank":"2"}
+  ],
+
+  "dealer": "S",
+  "vulnerability": "none",
+
+  "optimal_contract": { "level": 6, "suit": "NT", "declarer": "S", "doubled": 0 },
+  "optimal_tricks": 12,
+
+  "bidding_sequence": [
+    {"seat":"S","bid":{"level":2,"suit":"NT"},"note_fr":"2SA : 21H, jeu régulier (4-3-3-3)","note_en":"2NT: 21 HCP, balanced hand (4-3-3-3)"},
+    {"seat":"W","bid":{"special":"pass"}},
+    {"seat":"N","bid":{"level":6,"suit":"NT"},"note_fr":"6SA : 21+13=34H, petit chelem à SA","note_en":"6NT: 21+13=34 HCP, small slam in notrump"},
+    {"seat":"E","bid":{"special":"pass"}},
+    {"seat":"S","bid":{"special":"pass"}},
+    {"seat":"W","bid":{"special":"pass"}}
+  ],
+
+  "play_line": {
+    "opening_lead": {"suit":"C","rank":"5"},
+    "notes_fr": ["Déclarant a 12 levées : ♠AKJ + ♥AQJ + ♦AKQJ + ♣KQ... presque toutes maîtresses."],
+    "notes_en": ["Declarer has 12 tricks: nearly all winners across all suits."]
+  },
+
+  "concept": {
+    "slug": "nt_opening_strong",
+    "title_fr": "L'ouverture 2SA",
+    "title_en": "The 2NT Opening",
+    "body_fr": "On ouvre 2SA avec 20-21H et un jeu régulier. C'est une enchère très précise qui permet au partenaire de calculer directement si la manche (25H) ou le chelem (33H) est possible. Avec ≥18H et jeu régulier mais seulement 18-19H, on ouvre d'abord 1 d'une mineure puis on rebide 2SA.",
+    "body_en": "Open 2NT with 20-21 HCP and a balanced hand. This precise bid allows partner to directly calculate whether game (25 HCP) or slam (33 HCP) is possible.",
+    "key_rule_fr": "20-21H + jeu régulier → 2SA directement.",
+    "key_rule_en": "20-21 HCP + balanced → open 2NT directly."
+  }
+}

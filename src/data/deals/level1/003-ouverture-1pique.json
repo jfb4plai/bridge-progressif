@@ -1,0 +1,65 @@
+{
+  "slug": "l1-003-ouverture-1pique",
+  "level": 1,
+  "title_fr": "Ouvrir 1♠",
+  "title_en": "Opening 1♠",
+  "concepts": ["major_opening"],
+
+  "south": [
+    {"suit":"S","rank":"A"},{"suit":"S","rank":"K"},{"suit":"S","rank":"Q"},{"suit":"S","rank":"J"},{"suit":"S","rank":"2"},
+    {"suit":"H","rank":"K"},{"suit":"H","rank":"7"},{"suit":"H","rank":"6"},
+    {"suit":"D","rank":"J"},{"suit":"D","rank":"5"},{"suit":"D","rank":"4"},
+    {"suit":"C","rank":"3"},{"suit":"C","rank":"2"}
+  ],
+  "north": [
+    {"suit":"S","rank":"T"},{"suit":"S","rank":"8"},{"suit":"S","rank":"3"},
+    {"suit":"H","rank":"A"},{"suit":"H","rank":"Q"},{"suit":"H","rank":"J"},{"suit":"H","rank":"9"},
+    {"suit":"D","rank":"A"},{"suit":"D","rank":"K"},{"suit":"D","rank":"Q"},
+    {"suit":"C","rank":"T"},{"suit":"C","rank":"8"},{"suit":"C","rank":"7"}
+  ],
+  "east": [
+    {"suit":"S","rank":"9"},{"suit":"S","rank":"7"},{"suit":"S","rank":"6"},
+    {"suit":"H","rank":"T"},{"suit":"H","rank":"8"},{"suit":"H","rank":"5"},{"suit":"H","rank":"2"},
+    {"suit":"D","rank":"T"},{"suit":"D","rank":"9"},{"suit":"D","rank":"8"},
+    {"suit":"C","rank":"A"},{"suit":"C","rank":"K"},{"suit":"C","rank":"J"}
+  ],
+  "west": [
+    {"suit":"S","rank":"5"},{"suit":"S","rank":"4"},
+    {"suit":"H","rank":"4"},{"suit":"H","rank":"3"},
+    {"suit":"D","rank":"7"},{"suit":"D","rank":"6"},{"suit":"D","rank":"3"},{"suit":"D","rank":"2"},
+    {"suit":"C","rank":"Q"},{"suit":"C","rank":"9"},{"suit":"C","rank":"6"},{"suit":"C","rank":"5"},{"suit":"C","rank":"4"}
+  ],
+
+  "dealer": "S",
+  "vulnerability": "none",
+
+  "optimal_contract": { "level": 4, "suit": "S", "declarer": "S", "doubled": 0 },
+  "optimal_tricks": 10,
+
+  "bidding_sequence": [
+    {"seat":"S","bid":{"level":1,"suit":"S"},"note_fr":"1♠ : 5 cartes à Pique, 14H","note_en":"1♠: 5-card spade suit, 14 HCP"},
+    {"seat":"W","bid":{"special":"pass"}},
+    {"seat":"N","bid":{"level":3,"suit":"S"},"note_fr":"3♠ : 3 cartes à Pique + 15H, invitation manche","note_en":"3♠: 3-card support + 15 HCP, game invitation"},
+    {"seat":"E","bid":{"special":"pass"}},
+    {"seat":"S","bid":{"level":4,"suit":"S"},"note_fr":"4♠ : manche acceptée","note_en":"4♠: game accepted"},
+    {"seat":"W","bid":{"special":"pass"}},{"seat":"N","bid":{"special":"pass"}},{"seat":"E","bid":{"special":"pass"}}
+  ],
+
+  "play_line": {
+    "opening_lead": {"suit":"C","rank":"A"},
+    "notes_fr": ["Est entame ♣A (maîtresse). Déclarant a 10 levées : 5 Piques, 1 Cœur (via finesse possible), 3 Carreaux, 1 Trèfle.",
+      "Plan : tirer les atouts (Piques), puis établir les Carreaux."],
+    "notes_en": ["East leads ♣A. Declarer has 10 tricks: 5 spades, 3 diamonds, 1 heart, 1 club.",
+      "Plan: draw trumps, then cash diamonds."]
+  },
+
+  "concept": {
+    "slug": "major_opening",
+    "title_fr": "Ouvrir d'une majeure",
+    "title_en": "Opening a major suit",
+    "body_fr": "On ouvre 1♠ ou 1♥ avec 5 cartes ou plus dans la couleur et 12 à 21H. La majeure est prioritaire sur la mineure car le contrat de manche à 4 dans une majeure rapporte plus que 5 dans une mineure.",
+    "body_en": "Open 1♠ or 1♥ with 5+ cards and 12-21 HCP. Majors take priority over minors: game at the 4-level is easier than at the 5-level.",
+    "key_rule_fr": "5 cartes + 12 à 21H → ouvrir la majeure.",
+    "key_rule_en": "5 cards + 12-21 HCP → open the major."
+  }
+}

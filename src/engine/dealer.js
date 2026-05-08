@@ -3,7 +3,7 @@
  * Retourne {north, south, east, west} chacun = array de 13 cartes
  */
 
-import { makeDeck, SEATS } from './cards.js'
+import { makeDeck, SEATS, handHcp } from './cards.js'
 
 /** Mélange Fisher-Yates */
 const shuffle = arr => {
@@ -42,7 +42,6 @@ export const dealWithConstraints = (constraints = {}, maxAttempts = 200) => {
 }
 
 const meetsConstraints = (deal, constraints) => {
-  const { handHcp } = require('./cards.js') // dynamic to avoid circular
   return Object.entries(constraints).every(([seat, { min = 0, max = 37 }]) => {
     const hand = deal[seat.toLowerCase()]
     if (!hand) return true
