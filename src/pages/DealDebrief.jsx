@@ -5,15 +5,34 @@
  */
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useEffect, useRef } from 'react'
 import { SUIT_SYMBOLS } from '../engine/cards.js'
 import { bidStr } from '../engine/bidding/auction.js'
 import BiddingHistory from '../components/BiddingHistory.jsx'
+import { supabase } from '../lib/supabase.js'
+import { saveBiddingSession } from '../lib/sessions.js'
 
 export default function DealDebrief({ profile }) {
   const { state }  = useLocation()
   const navigate   = useNavigate()
   const { t }      = useTranslation()
   const lang       = profile?.lang ?? state?.lang ?? 'fr'
+  const system     = profile?.system ?? 'sf'
+  const saved      = useRef(false)
+
+  // Sauvegarde Supabase — une seule fois au montage
+  useEffect(() => {
+    if (!state?.deal || saved.current) return
+    saved.current = true
+    saveBiddingSession(supabase, {
+      deal:         state.deal,
+      contract:     state.contract,
+      evaluations:  state.evaluations ?? [],
+      hintsUsed:    state.hintsUsed   ?? 0,
+      totalXpDelta: state.totalXpDelta ?? 0,
+      system,
+    }).catch(() => {})  // silencieux — ne pas bloquer l'UI
+  }, []) // eslint-disable-line
 
   // Garde-fou : si on arrive ici sans état (accès direct à l'URL)
   if (!state?.deal) {

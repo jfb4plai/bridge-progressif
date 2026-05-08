@@ -109,6 +109,7 @@ export default function BiddingPractice({ profile, onXpGain }) {
             evaluations: [...evaluations, eval_],
             auctionHistory: result.history,
             totalXpDelta: totalXpRef.current,
+            hintsUsed: hintsUsed,
             lang,
           }
         })
