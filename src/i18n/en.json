@@ -1,0 +1,115 @@
+{
+  "app": {
+    "title": "Bridge Progressive",
+    "tagline": "Learn bridge at your own pace"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "practice": "Practice",
+    "library": "Library",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "name": "First name",
+    "login_btn": "Log in",
+    "register_btn": "Create account",
+    "no_account": "No account yet?",
+    "has_account": "Already have an account?"
+  },
+  "dashboard": {
+    "level": "Level",
+    "xp": "XP",
+    "xp_to_next": "XP to next level",
+    "start_bidding": "Bidding Practice",
+    "start_play": "Card Play Practice",
+    "start_full": "Full Deal",
+    "recent_sessions": "Recent sessions",
+    "no_sessions": "No sessions yet.",
+    "stats_deals": "Deals played",
+    "stats_contracts": "Contracts made",
+    "stats_hints": "Hints used"
+  },
+  "bidding": {
+    "title": "Bidding",
+    "your_hand": "Your hand",
+    "bidding_box": "Bidding box",
+    "history": "History",
+    "hint": "Hint",
+    "hint_cost": "Costs {{cost}} XP",
+    "hint_free": "Free",
+    "pass": "Pass",
+    "double": "Double",
+    "redouble": "Redouble",
+    "correct": "Correct!",
+    "incorrect": "Not optimal",
+    "expected": "Expected",
+    "your_bid": "Your bid",
+    "hcp_count": "{{hcp}} HCP"
+  },
+  "play": {
+    "title": "Card Play",
+    "contract": "Contract",
+    "declarer": "Declarer",
+    "dummy": "Dummy",
+    "tricks_ns": "N-S tricks",
+    "tricks_ew": "E-W tricks",
+    "your_turn": "Your turn",
+    "hint": "Hint",
+    "hint_remaining": "Hints left: {{n}}",
+    "trump": "Trump",
+    "no_trump": "No trump"
+  },
+  "debrief": {
+    "title": "Deal debrief",
+    "contract_made": "Contract made",
+    "contract_down": "Contract down",
+    "optimal_contract": "Optimal contract",
+    "your_contract": "Your contract",
+    "xp_earned": "XP earned",
+    "bidding_analysis": "Bidding analysis",
+    "play_analysis": "Play analysis",
+    "concept_learned": "Concept illustrated",
+    "next_deal": "Next deal",
+    "back_dashboard": "Dashboard"
+  },
+  "seats": {
+    "N": "North",
+    "E": "East",
+    "S": "South",
+    "W": "West"
+  },
+  "suits": {
+    "S": "Spades",
+    "H": "Hearts",
+    "D": "Diamonds",
+    "C": "Clubs",
+    "NT": "No Trump"
+  },
+  "levels": {
+    "1": "Beginner",
+    "2": "Apprentice",
+    "3": "Intermediate",
+    "4": "Advanced",
+    "5": "Expert"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "system": "Bidding system",
+    "system_sf": "Standard Français",
+    "system_saf": "SAF (Strong NT)",
+    "save": "Save"
+  },
+  "concepts": {
+    "finesse": "The finesse",
+    "communication": "Communication between hands",
+    "squeeze": "The squeeze",
+    "endplay": "Endplay",
+    "safety_play": "Safety play"
+  }
+}

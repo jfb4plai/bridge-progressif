@@ -1,0 +1,81 @@
+{
+  "slug": "l1-001-impasse-pique",
+  "level": 1,
+  "title_fr": "L'impasse à Pique",
+  "title_en": "The Spade Finesse",
+  "concepts": ["finesse"],
+
+  "north": [
+    {"suit":"S","rank":"A"}, {"suit":"S","rank":"K"},
+    {"suit":"H","rank":"7"}, {"suit":"H","rank":"4"}, {"suit":"H","rank":"2"},
+    {"suit":"D","rank":"K"}, {"suit":"D","rank":"6"}, {"suit":"D","rank":"5"},
+    {"suit":"C","rank":"A"}, {"suit":"C","rank":"8"}, {"suit":"C","rank":"7"}, {"suit":"C","rank":"3"}, {"suit":"C","rank":"2"}
+  ],
+  "east": [
+    {"suit":"S","rank":"Q"}, {"suit":"S","rank":"9"},
+    {"suit":"H","rank":"K"}, {"suit":"H","rank":"J"}, {"suit":"H","rank":"8"}, {"suit":"H","rank":"6"},
+    {"suit":"D","rank":"J"}, {"suit":"D","rank":"9"}, {"suit":"D","rank":"8"},
+    {"suit":"C","rank":"K"}, {"suit":"C","rank":"Q"}, {"suit":"C","rank":"J"}, {"suit":"C","rank":"9"}
+  ],
+  "south": [
+    {"suit":"S","rank":"J"}, {"suit":"S","rank":"T"}, {"suit":"S","rank":"2"},
+    {"suit":"H","rank":"A"}, {"suit":"H","rank":"Q"}, {"suit":"H","rank":"T"}, {"suit":"H","rank":"9"}, {"suit":"H","rank":"5"}, {"suit":"H","rank":"3"},
+    {"suit":"D","rank":"A"}, {"suit":"D","rank":"Q"}, {"suit":"D","rank":"7"},
+    {"suit":"C","rank":"6"}
+  ],
+  "west": [
+    {"suit":"S","rank":"8"}, {"suit":"S","rank":"7"}, {"suit":"S","rank":"6"}, {"suit":"S","rank":"5"}, {"suit":"S","rank":"4"}, {"suit":"S","rank":"3"},
+    {"suit":"H","rank":"—"},
+    {"suit":"D","rank":"T"}, {"suit":"D","rank":"4"}, {"suit":"D","rank":"3"}, {"suit":"D","rank":"2"},
+    {"suit":"C","rank":"T"}, {"suit":"C","rank":"5"}, {"suit":"C","rank":"4"}
+  ],
+
+  "dealer": "S",
+  "vulnerability": "none",
+
+  "optimal_contract": { "level": 4, "suit": "H", "declarer": "S", "doubled": 0 },
+  "optimal_tricks": 10,
+
+  "bidding_sequence": [
+    {"seat":"S","bid":{"level":1,"suit":"H"},"note_fr":"1♥ : 5 cartes à Cœur, 15H","note_en":"1♥: 5-card heart suit, 15 HCP"},
+    {"seat":"W","bid":{"special":"pass"}},
+    {"seat":"N","bid":{"level":3,"suit":"H"},"note_fr":"3♥ : 4 cartes à Cœur + 13H, forcing manche","note_en":"3♥: 4-card support + 13 HCP, game force"},
+    {"seat":"E","bid":{"special":"pass"}},
+    {"seat":"S","bid":{"level":4,"suit":"H"},"note_fr":"4♥ : manche acceptée","note_en":"4♥: game accepted"},
+    {"seat":"W","bid":{"special":"pass"}},
+    {"seat":"N","bid":{"special":"pass"}},
+    {"seat":"E","bid":{"special":"pass"}}
+  ],
+
+  "play_line": {
+    "opening_lead": {"suit":"S","rank":"5"},
+    "notes_fr": [
+      "Ouest entame ♠5 (sa couleur longue).",
+      "Nord joue ♠A (ou ♠R). Il possède A-R de Pique.",
+      "Déclarant doit réaliser 10 levées. Il a 4 atouts (dont l'As), 1 As de Trèfle, 1 As/Dame/Roi de Carreau.",
+      "L'impasse à Pique : jouer ♠V (ou ♠10) depuis Sud vers Nord. Si Est a la Dame, l'impasse réussit.",
+      "Dans cette donne, Est possède ♠D-9. L'impasse marche si Est ne monte pas la Dame.",
+      "Plan : tirer les atouts, puis jouer l'impasse à Pique pour éviter de perdre une levée dans cette couleur."
+    ],
+    "notes_en": [
+      "West leads ♠5 (their long suit).",
+      "North plays ♠A (or ♠K). North holds A-K of Spades.",
+      "Declarer needs 10 tricks. Has 4 trumps (including the Ace), ♣A, ♦A/Q/K.",
+      "The spade finesse: lead ♠J (or ♠10) from South towards North. If East holds the Queen, the finesse works.",
+      "In this deal, East holds ♠Q-9. The finesse works if East plays low.",
+      "Plan: draw trumps, then take the spade finesse to avoid losing a trick in that suit."
+    ]
+  },
+
+  "concept": {
+    "slug": "finesse",
+    "title_fr": "L'impasse",
+    "title_en": "The Finesse",
+    "body_fr": "L'impasse est une technique qui consiste à jouer une carte intermédiaire (V, D…) en espérant que la carte supérieure adverse se trouve du bon côté. On joue toujours vers la main qui possède les honneurs supérieurs (A-R), depuis la main opposée. Si l'adversaire ciblé joue bas, on prend avec la carte intermédiaire et la levée est gagnée sans utiliser les maîtresses.",
+    "body_en": "A finesse is a technique where you lead a middle card (J, Q…) hoping the higher missing honor is favorably placed. Always lead towards the hand that holds the high honors (A-K), from the opposite hand. If the targeted opponent plays low, the finesse wins without using your top honors.",
+    "key_rule_fr": "Jouez toujours VERS l'As-Roi, jamais depuis l'As-Roi.",
+    "key_rule_en": "Always lead TOWARDS the A-K, never from the A-K.",
+    "probability_fr": "Probabilité de réussite : 50% (la carte cherchée est chez l'un des deux adversaires).",
+    "probability_en": "Success probability: 50% (the missing card is with one of two opponents)."
+  }
+}

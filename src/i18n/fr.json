@@ -1,0 +1,115 @@
+{
+  "app": {
+    "title": "Bridge Progressif",
+    "tagline": "Apprenez le bridge à votre rythme"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "practice": "S'entraîner",
+    "library": "Bibliothèque",
+    "settings": "Paramètres",
+    "logout": "Déconnexion"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "email": "Email",
+    "password": "Mot de passe",
+    "name": "Prénom",
+    "login_btn": "Se connecter",
+    "register_btn": "Créer un compte",
+    "no_account": "Pas encore de compte ?",
+    "has_account": "Déjà un compte ?"
+  },
+  "dashboard": {
+    "level": "Niveau",
+    "xp": "XP",
+    "xp_to_next": "XP pour le niveau suivant",
+    "start_bidding": "Entraînement Annonces",
+    "start_play": "Entraînement Jeu",
+    "start_full": "Donne complète",
+    "recent_sessions": "Dernières parties",
+    "no_sessions": "Aucune partie encore jouée.",
+    "stats_deals": "Donnes jouées",
+    "stats_contracts": "Contrats réalisés",
+    "stats_hints": "Indices utilisés"
+  },
+  "bidding": {
+    "title": "Annonces",
+    "your_hand": "Votre main",
+    "bidding_box": "Tableau d'enchères",
+    "history": "Historique",
+    "hint": "Indice",
+    "hint_cost": "Coûte {{cost}} XP",
+    "hint_free": "Gratuit",
+    "pass": "Passe",
+    "double": "Contre",
+    "redouble": "Surcontre",
+    "correct": "Correct !",
+    "incorrect": "Pas optimal",
+    "expected": "Attendu",
+    "your_bid": "Votre enchère",
+    "hcp_count": "{{hcp}} H"
+  },
+  "play": {
+    "title": "Jeu de la carte",
+    "contract": "Contrat",
+    "declarer": "Déclarant",
+    "dummy": "Mort",
+    "tricks_ns": "Levées N-S",
+    "tricks_ew": "Levées E-O",
+    "your_turn": "À vous de jouer",
+    "hint": "Indice",
+    "hint_remaining": "Indices restants : {{n}}",
+    "trump": "Atout",
+    "no_trump": "Sans atout"
+  },
+  "debrief": {
+    "title": "Bilan de la donne",
+    "contract_made": "Contrat réalisé",
+    "contract_down": "Contrat chuté",
+    "optimal_contract": "Contrat optimal",
+    "your_contract": "Votre contrat",
+    "xp_earned": "XP gagnés",
+    "bidding_analysis": "Analyse des enchères",
+    "play_analysis": "Analyse du jeu",
+    "concept_learned": "Concept illustré",
+    "next_deal": "Donne suivante",
+    "back_dashboard": "Tableau de bord"
+  },
+  "seats": {
+    "N": "Nord",
+    "E": "Est",
+    "S": "Sud",
+    "W": "Ouest"
+  },
+  "suits": {
+    "S": "Pique",
+    "H": "Cœur",
+    "D": "Carreau",
+    "C": "Trèfle",
+    "NT": "Sans Atout"
+  },
+  "levels": {
+    "1": "Débutant",
+    "2": "Apprenti",
+    "3": "Confirmé",
+    "4": "Avancé",
+    "5": "Expert"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "language": "Langue",
+    "system": "Système d'enchères",
+    "system_sf": "Standard Français",
+    "system_saf": "SAF (Sans Atout Fort)",
+    "save": "Enregistrer"
+  },
+  "concepts": {
+    "finesse": "L'impasse",
+    "communication": "La communication entre les mains",
+    "squeeze": "Le squeeze",
+    "endplay": "Le coup de passot",
+    "safety_play": "Le coup de sécurité"
+  }
+}

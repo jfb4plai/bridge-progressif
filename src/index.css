@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Polices cartes de bridge */
+.font-card {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Carte sélectionnée — animation légère */
+@keyframes card-lift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+/* Couleurs rouge pour les symbols de couleur */
+.suit-red { color: #dc2626; }
+.suit-black { color: #1c1917; }
+
+/* Scrollbar discrète */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 2px; }
