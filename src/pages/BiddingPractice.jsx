@@ -86,6 +86,9 @@ export default function BiddingPractice({ profile, onXpGain }) {
         <Hand hand={playerHand} lang={lang} compact size="md" />
       </div>
 
+      {/* Rappel comptage HCP */}
+      <HcpReminder lang={lang} />
+
       {/* Historique enchères */}
       {bidsHistory.length > 0 && (
         <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
@@ -146,6 +149,51 @@ export default function BiddingPractice({ profile, onXpGain }) {
           >
             {t('debrief.back_dashboard')}
           </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function HcpReminder({ lang }) {
+  const [open, setOpen] = useState(false)
+
+  const honors = lang === 'fr'
+    ? [{ r: 'A', v: 4 }, { r: 'R', v: 3 }, { r: 'D', v: 2 }, { r: 'V', v: 1 }]
+    : [{ r: 'A', v: 4 }, { r: 'K', v: 3 }, { r: 'Q', v: 2 }, { r: 'J', v: 1 }]
+
+  const label = lang === 'fr' ? 'Comptage des honneurs' : 'Honor count'
+  const threshold = lang === 'fr'
+    ? '12 H minimum pour ouvrir · 25 H pour la manche'
+    : '12 HCP minimum to open · 25 HCP for game'
+
+  return (
+    <div className="rounded-xl border border-stone-200 bg-stone-50 text-sm overflow-hidden">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-4 py-2.5 text-stone-600 hover:bg-stone-100 transition-colors"
+      >
+        <span className="font-semibold text-xs uppercase tracking-wide">{label}</span>
+        <span className="text-stone-400 text-xs">{open ? '▲' : '▼'}</span>
+      </button>
+
+      {open && (
+        <div className="px-4 pb-3 space-y-2">
+          {/* Valeurs honneurs */}
+          <div className="flex gap-3">
+            {honors.map(({ r, v }) => (
+              <div key={r} className="flex items-center gap-1">
+                <span className="font-bold text-stone-800 font-card text-base">{r}</span>
+                <span className="text-stone-400">=</span>
+                <span className="font-semibold text-emerald-700">{v} H</span>
+              </div>
+            ))}
+            <div className="flex items-center gap-1 text-stone-400 text-xs ml-auto">
+              {lang === 'fr' ? 'les autres = 0' : 'others = 0'}
+            </div>
+          </div>
+          {/* Seuils clés */}
+          <p className="text-xs text-stone-500 border-t border-stone-200 pt-2">{threshold}</p>
         </div>
       )}
     </div>
