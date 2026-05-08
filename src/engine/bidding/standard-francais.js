@@ -16,8 +16,9 @@ export const PASS   = { special: 'pass' }
 export const DBL    = { special: 'dbl' }
 export const RDBL   = { special: 'rdbl' }
 export const bid    = (level, suit) => ({ level, suit })
+const SUIT_SYM = { S: '♠', H: '♥', D: '♦', C: '♣', NT: 'SA' }
 export const bidStr = b => b.special ? b.special.toUpperCase()
-  : `${b.level}${b.suit === 'NT' ? 'SA' : b.suit}`  // affichage français: 1SA
+  : `${b.level}${SUIT_SYM[b.suit] ?? b.suit}`
 
 // ─── Évaluation de la main ───────────────────────────────────────────────────
 
