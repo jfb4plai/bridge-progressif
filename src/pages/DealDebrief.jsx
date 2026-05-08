@@ -9,6 +9,8 @@ import { useEffect, useRef } from 'react'
 import { SUIT_SYMBOLS } from '../engine/cards.js'
 import { bidStr } from '../engine/bidding/auction.js'
 import BiddingHistory from '../components/BiddingHistory.jsx'
+import Hand from '../components/Hand.jsx'
+import { handHcp } from '../engine/cards.js'
 import { supabase } from '../lib/supabase.js'
 import { saveBiddingSession } from '../lib/sessions.js'
 
@@ -90,6 +92,14 @@ export default function DealDebrief({ profile }) {
         </button>
       </div>
 
+      {/* Main de Sud */}
+      <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
+        <div className="text-xs text-stone-500 mb-3 font-semibold uppercase tracking-wide">
+          {lang === 'fr' ? 'Votre main (Sud)' : 'Your hand (South)'} — {handHcp(deal.south)} H
+        </div>
+        <Hand hand={deal.south} lang={lang} compact size="md" />
+      </div>
+
       {/* Contrat final */}
       <div className={`rounded-xl border p-4 ${contractOk ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'}`}>
         <div className="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">
@@ -161,14 +171,15 @@ export default function DealDebrief({ profile }) {
       )}
 
       {/* Séquence complète */}
-      {auctionHistory.length > 0 && (
-        <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
-          <div className="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">
-            {lang === 'fr' ? 'Séquence complète' : 'Full auction'}
-          </div>
-          <BiddingHistory history={auctionHistory} dealer={deal.dealer} lang={lang} />
+      <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
+        <div className="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">
+          {lang === 'fr' ? 'Séquence complète' : 'Full auction'}
         </div>
-      )}
+        {auctionHistory.length > 0
+          ? <BiddingHistory history={auctionHistory} dealer={deal.dealer} lang={lang} />
+          : <p className="text-xs text-stone-400">{lang === 'fr' ? 'Aucune enchère enregistrée.' : 'No bids recorded.'}</p>
+        }
+      </div>
 
       {/* Concept pédagogique */}
       {concept && (
