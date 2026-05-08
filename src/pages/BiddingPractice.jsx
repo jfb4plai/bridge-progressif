@@ -188,8 +188,8 @@ export default function BiddingPractice({ profile, onXpGain }) {
         </div>
       )}
 
-      {/* Feedback dernier bid de Sud */}
-      {lastEval && (
+      {/* Feedback dernier bid de Sud (masqué pour les rebids non évalués) */}
+      {lastEval && !lastEval.isRebid && (
         <div className={`rounded-xl border p-4 text-sm ${lastEval.correct ? 'bg-emerald-50 border-emerald-200' : 'bg-red-50 border-red-200'}`}>
           <div className="font-semibold mb-1">
             {lastEval.correct ? `✓ ${t('bidding.correct')}` : `✗ ${t('bidding.incorrect')}`}

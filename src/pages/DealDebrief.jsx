@@ -63,9 +63,10 @@ export default function DealDebrief({ profile }) {
     && contract.level === optimal.level
     && contract.suit  === optimal.suit
 
-  // ─── Score enchères ─────────────────────────────────────────────────────────
-  const nbCorrect = evaluations.filter(e => e.correct).length
-  const nbTotal   = evaluations.length
+  // ─── Score enchères (rebids non évalués exclus) ──────────────────────────────
+  const scoredEvals = evaluations.filter(e => !e.isRebid)
+  const nbCorrect   = scoredEvals.filter(e => e.correct).length
+  const nbTotal     = scoredEvals.length
   const xpSign    = totalXpDelta >= 0 ? '+' : ''
 
   // ─── Concept pédagogique ────────────────────────────────────────────────────
@@ -121,9 +122,9 @@ export default function DealDebrief({ profile }) {
             {lang === 'fr' ? 'Vos enchères' : 'Your bids'}
           </div>
           <div className="flex items-center gap-6">
-            {/* Jauge visuelle */}
+            {/* Jauge visuelle (rebids exclus) */}
             <div className="flex gap-1.5">
-              {evaluations.map((e, i) => (
+              {scoredEvals.map((e, i) => (
                 <div
                   key={i}
                   title={`${bidStr(e.played)} → ${e.correct ? '✓' : '✗ ' + bidStr(e.expected)}`}
@@ -144,9 +145,9 @@ export default function DealDebrief({ profile }) {
           </div>
 
           {/* Détail des erreurs */}
-          {evaluations.some(e => !e.correct) && (
+          {scoredEvals.some(e => !e.correct) && (
             <div className="mt-3 space-y-1 border-t border-stone-100 pt-3">
-              {evaluations.filter(e => !e.correct).map((e, i) => (
+              {scoredEvals.filter(e => !e.correct).map((e, i) => (
                 <div key={i} className="text-xs text-stone-500">
                   <span className="text-red-500 font-medium">{bidStr(e.played)}</span>
                   {' → '}

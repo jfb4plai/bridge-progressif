@@ -182,9 +182,17 @@ export const evaluatePlayerBid = (playerBid, hand, history, { system = 'sf' } = 
       : { bid: PASS, key: 'pass_overcall' }
     explanations = OPENING_EXPLANATIONS[rec.key] ?? {}
   } else {
-    // Rebid / suite — on accepte tout (pas encore évalué)
-    rec = { bid: PASS, key: 'pass_default' }
-    explanations = OPENING_EXPLANATIONS['pass_default'] ?? {}
+    // Rebid / suite — non évalué : pas de pénalité, pas de message erroné
+    return {
+      correct:        true,
+      expected:       playerBid,
+      played:         playerBid,
+      key:            'rebid_pending',
+      xpDelta:        0,
+      explanation_fr: '',
+      explanation_en: '',
+      isRebid:        true,
+    }
   }
 
   const correct = bidsEqual(playerBid, rec.bid)
