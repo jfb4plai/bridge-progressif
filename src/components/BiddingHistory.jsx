@@ -41,7 +41,8 @@ const SEAT_COLOR = { N: 'text-emerald-700', S: 'text-emerald-700', E: 'text-ambe
  */
 export function AiBidReadout({ history = [], lang = 'fr' }) {
   const labels = SEAT_LABELS[lang] ?? SEAT_LABELS.fr
-  const aiBids = history.filter(h => h.isAi && h.aiKey)
+  // 'pass_default' = catch-all sans signification pédagogique → masqué
+  const aiBids = history.filter(h => h.isAi && h.aiKey && h.aiKey !== 'pass_default')
   if (aiBids.length === 0) return null
 
   return (
