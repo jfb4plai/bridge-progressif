@@ -28,6 +28,8 @@ export default function BridgeTable({
   playableCards = [],
   selectedCard = null,
   onCardClick,
+  dummyPlayableCards = [],
+  onDummyCardClick,
   lang = 'fr',
   declarer,
   compact = false,
@@ -39,22 +41,23 @@ export default function BridgeTable({
   const trickCard = seat => currentTrick.find(tc => tc.seat === seat)?.card
 
   const renderHand = (seat, orientation = 'horizontal', size = 'md') => {
-    const hand     = getHand(seat)
-    const visible  = revealSeats.includes(seat)
-    const isPlayer = seat === 'S'  // le joueur humain est toujours Sud
+    const hand      = getHand(seat)
+    const visible   = revealSeats.includes(seat)
+    const isSouth   = seat === 'S'
+    const isDummy   = seat === 'N' && !!onDummyCardClick
 
     return (
       <Hand
         hand={hand}
         lang={lang}
         faceDown={!visible}
-        playableCards={isPlayer ? playableCards : []}
-        selectedCard={isPlayer ? selectedCard : null}
-        onCardClick={isPlayer ? onCardClick : undefined}
+        playableCards={isSouth ? playableCards : isDummy ? dummyPlayableCards : []}
+        selectedCard={isSouth ? selectedCard : null}
+        onCardClick={isSouth ? onCardClick : isDummy ? onDummyCardClick : undefined}
         orientation={orientation}
         size={size}
         label={labels[seat]}
-        compact={compact && !isPlayer}
+        compact={compact && !isSouth && !isDummy}
       />
     )
   }
