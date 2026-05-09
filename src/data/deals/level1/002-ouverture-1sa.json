@@ -49,13 +49,13 @@
     "opening_lead": {"suit":"C","rank":"9"},
     "notes_fr": [
       "Ouest entame ♣9 (tête de séquence).",
-      "Déclarant a 9 levées rapides : ♠A-D, ♥R, ♦A-R-D, ♣A-D + 2 levées Pique via finesse possible.",
-      "Plan simple : gagner l'entame ♣, jouer ♦A-R-D pour 3 levées, puis établir les Piques."
+      "N-S ont 11 levées rapides : ♠A-R-D (3 maîtresses — As et Dame au Sud, Roi au Nord), ♥A-R (2), ♦A-R-D (3), ♣A-R-D (3). Aucune finesse nécessaire.",
+      "Plan : encaisser les honneurs dans l'ordre. Les adversaires ne peuvent prendre qu'une levée au maximum."
     ],
     "notes_en": [
       "West leads ♣9 (top of sequence).",
-      "Declarer has 9 fast tricks: ♠A-Q, ♥K, ♦A-K-Q, ♣A-Q + spade tricks.",
-      "Simple plan: win the lead, cash ♦A-K-Q for 3 tricks, then establish spades."
+      "N-S have 11 fast tricks: ♠A-K-Q (3 winners — Ace and Queen in South, King in North), ♥A-K (2), ♦A-K-Q (3), ♣A-K-Q (3). No finesse needed.",
+      "Plan: cash honors in order. Opponents can take at most one trick."
     ]
   },
 
