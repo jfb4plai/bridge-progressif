@@ -29,7 +29,7 @@ export default function Hand({
 }) {
   const sorted = sortHand(hand)
 
-  if (compact) {
+  if (compact && !faceDown) {
     return <CompactHand hand={sorted} lang={lang} label={label} />
   }
 
