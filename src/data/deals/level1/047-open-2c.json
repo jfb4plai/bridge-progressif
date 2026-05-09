@@ -1,0 +1,290 @@
+{
+  "slug": "l1-047-open-2c",
+  "level": 1,
+  "title_fr": "2♣ Forcing — slam possible",
+  "title_en": "2♣ Forcing — slam possible",
+  "concepts": [
+    "open_2c"
+  ],
+  "south": [
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    }
+  ],
+  "north": [
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    }
+  ],
+  "east": [
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    }
+  ],
+  "west": [
+    {
+      "suit": "D",
+      "rank": "T"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    }
+  ],
+  "dealer": "S",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 4,
+    "suit": "H",
+    "declarer": "S",
+    "doubled": 0
+  },
+  "optimal_tricks": 10,
+  "bidding_sequence": [
+    {
+      "seat": "S",
+      "bid": {
+        "level": 2,
+        "suit": "C"
+      },
+      "note_fr": "2♣ : 23H — main très forte → forcing absolu",
+      "note_en": "2♣: 23 HCP — very strong → absolute force"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "S",
+      "rank": "A"
+    },
+    "notes_fr": [
+      "Ouest entame ♠A. Sud déclare 4♥."
+    ],
+    "notes_en": [
+      "West leads ♠A. South declares 4♥."
+    ]
+  },
+  "concept": {
+    "slug": "ouverture-2t-forcing",
+    "title_fr": "2♣ Forcing — Main très forte",
+    "title_en": "2♣ Forcing — Very strong hand",
+    "body_fr": "Avec 22H+ (ou 19H+ en jeu très irrégulier), on ouvre 2♣ — convention forcing absolu. Le partenaire ne peut jamais passer : il doit toujours répondre, même avec une main sans honneurs.",
+    "body_en": "With 22+ HCP (or 19+ with a highly distributional hand), open 2♣ — the absolute forcing convention. Partner can never pass: they must always respond, even with a worthless hand.",
+    "key_rule_fr": "≥ 22H (ou ≥ 19H très irrégulier) → 2♣ forcing absolu.",
+    "key_rule_en": "≥ 22 HCP (or ≥ 19 HCP very distributional) → 2♣ absolute force."
+  }
+}

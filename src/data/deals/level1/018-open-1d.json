@@ -1,0 +1,290 @@
+{
+  "slug": "l1-018-open-1d",
+  "level": 1,
+  "title_fr": "Ouverture 1♦ — 5 carreaux",
+  "title_en": "Opening 1♦ — 5-card diamonds",
+  "concepts": [
+    "open_1d"
+  ],
+  "south": [
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    }
+  ],
+  "north": [
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    }
+  ],
+  "east": [
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    }
+  ],
+  "west": [
+    {
+      "suit": "D",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    }
+  ],
+  "dealer": "S",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 2,
+    "suit": "D",
+    "declarer": "S",
+    "doubled": 0
+  },
+  "optimal_tricks": 8,
+  "bidding_sequence": [
+    {
+      "seat": "S",
+      "bid": {
+        "level": 1,
+        "suit": "D"
+      },
+      "note_fr": "1♦ : 14H — 6 ♦ ≥ 2 ♣, mineure la plus longue",
+      "note_en": "1♦: 14 HCP — 6 ♦ ≥ 2 ♣, longest minor"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "C",
+      "rank": "T"
+    },
+    "notes_fr": [
+      "Ouest entame ♣T. Sud déclare 2♦."
+    ],
+    "notes_en": [
+      "West leads ♣T. South declares 2♦."
+    ]
+  },
+  "concept": {
+    "slug": "ouverture-1d",
+    "title_fr": "Ouverture 1♦",
+    "title_en": "Opening 1♦",
+    "body_fr": "Avec 12-21H, pas de majeure 5ème et pas de jeu régulier pour 1SA : on ouvre 1♦ quand les carreaux sont strictement plus nombreux que les trèfles.",
+    "body_en": "With 12-21 HCP, no 5-card major, not balanced for 1NT: open 1♦ when diamonds strictly outnumber clubs.",
+    "key_rule_fr": "12-21H, 4+ ♦, ♦ > ♣, pas de majeure 5e → 1♦.",
+    "key_rule_en": "12-21 HCP, 4+ ♦, ♦ > ♣, no 5-card major → 1♦."
+  }
+}

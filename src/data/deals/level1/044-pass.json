@@ -1,0 +1,313 @@
+{
+  "slug": "l1-044-pass",
+  "level": 1,
+  "title_fr": "Main légère, pas d'ouverture",
+  "title_en": "Light hand, no opening",
+  "concepts": [
+    "pass"
+  ],
+  "south": [
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    }
+  ],
+  "north": [
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    }
+  ],
+  "east": [
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    }
+  ],
+  "west": [
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    }
+  ],
+  "dealer": "S",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 2,
+    "suit": "H",
+    "declarer": "N",
+    "doubled": 0
+  },
+  "optimal_tricks": 8,
+  "bidding_sequence": [
+    {
+      "seat": "S",
+      "bid": {
+        "special": "pass"
+      },
+      "note_fr": "Passe : 10H, minimum 12H requis pour ouvrir",
+      "note_en": "Pass: 10 HCP, need 12+ HCP to open"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "level": 1,
+        "suit": "H"
+      },
+      "note_fr": "1♥ : Nord ouvre, 10H",
+      "note_en": "1♥: North opens, 10 HCP"
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "S",
+      "bid": {
+        "level": 1,
+        "suit": "NT"
+      },
+      "note_fr": "1SA : Sud répond, 10H",
+      "note_en": "1SA: South responds, 10 HCP"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "C",
+      "rank": "T"
+    },
+    "notes_fr": [
+      "Ouest entame ♣T. Nord déclare 2♥."
+    ],
+    "notes_en": [
+      "West leads ♣T. North declares 2♥."
+    ]
+  },
+  "concept": {
+    "slug": "main-faible",
+    "title_fr": "Main trop faible — Passe",
+    "title_en": "Weak hand — Pass",
+    "body_fr": "Il faut au minimum 12H (ou 13 points HL avec la distribution) pour ouvrir. En dessous, on passe sans hésiter. Passer n'est pas un échec : c'est laisser l'initiative à qui a la force.",
+    "body_en": "You need at least 12 HCP (or 13 HL with distribution) to open. Below this, pass without hesitation. Passing is not a failure: it gives the initiative to whoever has the strength.",
+    "key_rule_fr": "< 12H (ou < 13 HL) → PASSE obligatoire.",
+    "key_rule_en": "< 12 HCP (or < 13 HL) → PASS required."
+  }
+}

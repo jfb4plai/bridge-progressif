@@ -1,0 +1,299 @@
+{
+  "slug": "l1-023-open-1h",
+  "level": 1,
+  "title_fr": "Ouverture 1♥ — 5 cœurs",
+  "title_en": "Opening 1♥ — 5-card hearts",
+  "concepts": [
+    "open_1h"
+  ],
+  "south": [
+    {
+      "suit": "H",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    }
+  ],
+  "north": [
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    }
+  ],
+  "east": [
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    }
+  ],
+  "west": [
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    }
+  ],
+  "dealer": "S",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 2,
+    "suit": "S",
+    "declarer": "S",
+    "doubled": 0
+  },
+  "optimal_tricks": 8,
+  "bidding_sequence": [
+    {
+      "seat": "S",
+      "bid": {
+        "level": 1,
+        "suit": "H"
+      },
+      "note_fr": "1♥ : 12H — 5+ ♥, priorité majeure",
+      "note_en": "1♥: 12 HCP — 5+ ♥, major first"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "level": 1,
+        "suit": "S"
+      },
+      "note_fr": "1♠ : 9H — 4+ ♠, nouvelle couleur",
+      "note_en": "1♠: 9 HCP — 4+ ♠, new suit"
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "S",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "D",
+      "rank": "K"
+    },
+    "notes_fr": [
+      "Ouest entame ♦K. Sud déclare 2♠."
+    ],
+    "notes_en": [
+      "West leads ♦K. South declares 2♠."
+    ]
+  },
+  "concept": {
+    "slug": "ouverture-1h",
+    "title_fr": "Ouverture 1♥",
+    "title_en": "Opening 1♥",
+    "body_fr": "En Standard Français, la règle des majeures 5ème est la priorité absolue. Avec 5+ cœurs et 12-21H, on ouvre 1♥ — avant même de vérifier les mineures ou le sans-atout.",
+    "body_en": "In Standard Français, the 5-card major rule has absolute priority. With 5+ hearts and 12-21 HCP, open 1♥ — before checking minors or no-trump.",
+    "key_rule_fr": "12-21H, 5+ ♥ (pas 5+ ♠) → 1♥.",
+    "key_rule_en": "12-21 HCP, 5+ ♥ (not 5+ ♠) → 1♥."
+  }
+}

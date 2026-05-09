@@ -1,0 +1,286 @@
+{
+  "slug": "l2-020-e1s-spass",
+  "level": 2,
+  "title_fr": "Pas les conditions pour contre-enchérir",
+  "title_en": "No overcall conditions",
+  "concepts": [
+    "pass_overcall"
+  ],
+  "south": [
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    }
+  ],
+  "north": [
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    }
+  ],
+  "east": [
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    }
+  ],
+  "west": [
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    }
+  ],
+  "dealer": "E",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 1,
+    "suit": "S",
+    "declarer": "E",
+    "doubled": 0
+  },
+  "optimal_tricks": 7,
+  "bidding_sequence": [
+    {
+      "seat": "E",
+      "bid": {
+        "level": 1,
+        "suit": "S"
+      },
+      "note_fr": "1♠ : Est ouvre, 14H, 6+ cartes",
+      "note_en": "1♠: East opens, 14 HCP"
+    },
+    {
+      "seat": "S",
+      "bid": {
+        "special": "pass"
+      },
+      "note_fr": "Passe : 5H, pas les conditions pour contre-enchérir",
+      "note_en": "Pass: 5 HCP, no overcall conditions"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "D",
+      "rank": "A"
+    },
+    "notes_fr": [
+      "Ouest entame ♦A."
+    ],
+    "notes_en": [
+      "West leads ♦A."
+    ]
+  },
+  "concept": {
+    "slug": "passe-competition",
+    "title_fr": "Passe en compétition",
+    "title_en": "Pass in competition",
+    "body_fr": "Si vous n'avez pas les conditions pour contre-enchérir (moins de 12H ou pas de couleur 5ème solide), passez. Une contre-enchère insuffisante met toute l'équipe en danger.",
+    "body_en": "If you don't meet overcall conditions (less than 12 HCP or no solid 5-card suit), pass. An insufficient overcall endangers your whole partnership.",
+    "key_rule_fr": "< 12H ou pas de couleur 5e solide → PASSE en compétition.",
+    "key_rule_en": "< 12 HCP or no solid 5-card suit → PASS in competition."
+  }
+}

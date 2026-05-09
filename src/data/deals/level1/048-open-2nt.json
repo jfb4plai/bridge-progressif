@@ -1,0 +1,290 @@
+{
+  "slug": "l1-048-open-2nt",
+  "level": 1,
+  "title_fr": "2SA — 20 honneurs régulier",
+  "title_en": "2NT — 20 HCP balanced",
+  "concepts": [
+    "open_2nt"
+  ],
+  "south": [
+    {
+      "suit": "D",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    }
+  ],
+  "north": [
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    }
+  ],
+  "east": [
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    }
+  ],
+  "west": [
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    }
+  ],
+  "dealer": "S",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 2,
+    "suit": "NT",
+    "declarer": "S",
+    "doubled": 0
+  },
+  "optimal_tricks": 8,
+  "bidding_sequence": [
+    {
+      "seat": "S",
+      "bid": {
+        "level": 2,
+        "suit": "NT"
+      },
+      "note_fr": "2SA : 20H — jeu régulier 20-21H",
+      "note_en": "2SA: 20 HCP — balanced 20-21 HCP"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "C",
+      "rank": "K"
+    },
+    "notes_fr": [
+      "Ouest entame ♣K. Sud déclare 2SA."
+    ],
+    "notes_en": [
+      "West leads ♣K. South declares 2NT."
+    ]
+  },
+  "concept": {
+    "slug": "ouverture-2sa",
+    "title_fr": "Ouverture 2SA",
+    "title_en": "Opening 2NT",
+    "body_fr": "Avec 20-21H et jeu régulier : on ouvre directement 2SA. Zone intermédiaire entre 1SA (15-17H) et 2♣ (22H+). Partenaire peut passer avec 0-3H ou enchérir la manche avec 4H+.",
+    "body_en": "With 20-21 HCP and a balanced hand: open 2NT directly. Intermediate zone between 1NT (15-17) and 2♣ (22+). Partner can pass with 0-3 HCP or bid game with 4+ HCP.",
+    "key_rule_fr": "20-21H, jeu régulier → 2SA directement.",
+    "key_rule_en": "20-21 HCP, balanced → open 2NT directly."
+  }
+}

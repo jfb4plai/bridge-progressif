@@ -1,0 +1,308 @@
+{
+  "slug": "l2-013-e1c-soc",
+  "level": 2,
+  "title_fr": "Compétition sur ouverture mineure",
+  "title_en": "Competition over minor opening",
+  "concepts": [
+    "overcall"
+  ],
+  "south": [
+    {
+      "suit": "C",
+      "rank": "K"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    }
+  ],
+  "north": [
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "3"
+    }
+  ],
+  "east": [
+    {
+      "suit": "H",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    }
+  ],
+  "west": [
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    }
+  ],
+  "dealer": "E",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 1,
+    "suit": "D",
+    "declarer": "S",
+    "doubled": 0
+  },
+  "optimal_tricks": 7,
+  "bidding_sequence": [
+    {
+      "seat": "E",
+      "bid": {
+        "level": 1,
+        "suit": "C"
+      },
+      "note_fr": "1♣ : Est ouvre, 12H, 3+ cartes",
+      "note_en": "1♣: East opens, 12 HCP"
+    },
+    {
+      "seat": "S",
+      "bid": {
+        "level": 1,
+        "suit": "D"
+      },
+      "note_fr": "1♦ : 13H, 5+ cartes → contre-enchère",
+      "note_en": "1♦: 13 HCP, 5+ cards → overcall"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "level": 1,
+        "suit": "NT"
+      },
+      "note_fr": "1SA : Nord soutient, 9H",
+      "note_en": "1SA: North supports, 9 HCP"
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "S",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "S",
+      "rank": "A"
+    },
+    "notes_fr": [
+      "Ouest entame ♠A."
+    ],
+    "notes_en": [
+      "West leads ♠A."
+    ]
+  },
+  "concept": {
+    "slug": "contre-enchere",
+    "title_fr": "La contre-enchère simple",
+    "title_en": "Simple Overcall",
+    "body_fr": "Quand un adversaire ouvre et que vous avez une belle couleur 5ème avec 12-17H, vous pouvez contre-enchérir au palier minimum. Règle : 5 cartes dans la couleur, 12-17H, et de préférence l'As ou le Roi dans cette couleur pour la solidité.",
+    "body_en": "When an opponent opens and you hold a good 5-card suit with 12-17 HCP, you can overcall at the minimum level. Rule: 5 cards in your suit, 12-17 HCP, and ideally the Ace or King in that suit for solidity.",
+    "key_rule_fr": "5+ cartes, 12-17H → contre-enchérir au palier minimum légal.",
+    "key_rule_en": "5+ cards, 12-17 HCP → overcall at the minimum legal level."
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "slug": "l1-012-open-1c",
+  "level": 1,
+  "title_fr": "Ouverture 1♣ — main de 12H",
+  "title_en": "Opening 1♣ — 12 HCP hand",
+  "concepts": [
+    "open_1c"
+  ],
+  "south": [
+    {
+      "suit": "H",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "T"
+    },
+    {
+      "suit": "S",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "9"
+    },
+    {
+      "suit": "H",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "A"
+    },
+    {
+      "suit": "H",
+      "rank": "J"
+    },
+    {
+      "suit": "C",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "A"
+    },
+    {
+      "suit": "D",
+      "rank": "6"
+    }
+  ],
+  "north": [
+    {
+      "suit": "C",
+      "rank": "3"
+    },
+    {
+      "suit": "S",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "4"
+    },
+    {
+      "suit": "H",
+      "rank": "9"
+    },
+    {
+      "suit": "S",
+      "rank": "T"
+    },
+    {
+      "suit": "D",
+      "rank": "Q"
+    },
+    {
+      "suit": "H",
+      "rank": "A"
+    },
+    {
+      "suit": "C",
+      "rank": "T"
+    },
+    {
+      "suit": "S",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "5"
+    },
+    {
+      "suit": "D",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "T"
+    },
+    {
+      "suit": "H",
+      "rank": "4"
+    }
+  ],
+  "east": [
+    {
+      "suit": "S",
+      "rank": "K"
+    },
+    {
+      "suit": "C",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "K"
+    },
+    {
+      "suit": "D",
+      "rank": "2"
+    },
+    {
+      "suit": "S",
+      "rank": "Q"
+    },
+    {
+      "suit": "C",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "A"
+    },
+    {
+      "suit": "S",
+      "rank": "4"
+    },
+    {
+      "suit": "D",
+      "rank": "3"
+    },
+    {
+      "suit": "D",
+      "rank": "9"
+    },
+    {
+      "suit": "C",
+      "rank": "K"
+    }
+  ],
+  "west": [
+    {
+      "suit": "D",
+      "rank": "8"
+    },
+    {
+      "suit": "S",
+      "rank": "2"
+    },
+    {
+      "suit": "H",
+      "rank": "5"
+    },
+    {
+      "suit": "S",
+      "rank": "6"
+    },
+    {
+      "suit": "D",
+      "rank": "7"
+    },
+    {
+      "suit": "C",
+      "rank": "5"
+    },
+    {
+      "suit": "H",
+      "rank": "6"
+    },
+    {
+      "suit": "C",
+      "rank": "2"
+    },
+    {
+      "suit": "D",
+      "rank": "J"
+    },
+    {
+      "suit": "H",
+      "rank": "K"
+    },
+    {
+      "suit": "H",
+      "rank": "7"
+    },
+    {
+      "suit": "S",
+      "rank": "8"
+    },
+    {
+      "suit": "H",
+      "rank": "8"
+    }
+  ],
+  "dealer": "S",
+  "vulnerability": "none",
+  "optimal_contract": {
+    "level": 2,
+    "suit": "H",
+    "declarer": "S",
+    "doubled": 0
+  },
+  "optimal_tricks": 8,
+  "bidding_sequence": [
+    {
+      "seat": "S",
+      "bid": {
+        "level": 1,
+        "suit": "C"
+      },
+      "note_fr": "1♣ : 13H — 3 ♣ ≥ ♦, mineure la plus longue",
+      "note_en": "1♣: 13 HCP — 3 ♣ ≥ ♦, longest minor"
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "N",
+      "bid": {
+        "level": 1,
+        "suit": "S"
+      },
+      "note_fr": "1♠ : 6H — 4+ ♠, nouvelle couleur",
+      "note_en": "1♠: 6 HCP — 4+ ♠, new suit"
+    },
+    {
+      "seat": "E",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "S",
+      "bid": {
+        "special": "pass"
+      }
+    },
+    {
+      "seat": "W",
+      "bid": {
+        "special": "pass"
+      }
+    }
+  ],
+  "play_line": {
+    "opening_lead": {
+      "suit": "H",
+      "rank": "K"
+    },
+    "notes_fr": [
+      "Ouest entame ♥K. Sud déclare 2♥."
+    ],
+    "notes_en": [
+      "West leads ♥K. South declares 2♥."
+    ]
+  },
+  "concept": {
+    "slug": "ouverture-1c",
+    "title_fr": "Ouverture 1♣",
+    "title_en": "Opening 1♣",
+    "body_fr": "Avec 12-21H, pas de majeure 5ème et pas de jeu régulier pour 1SA : on ouvre 1♣ quand les trèfles sont au moins aussi longs que les carreaux. La règle : mineure la plus longue d'abord.",
+    "body_en": "With 12-21 HCP, no 5-card major, not balanced for 1NT: open 1♣ when clubs are at least as long as diamonds. Rule: bid your longest minor first.",
+    "key_rule_fr": "12-21H, 4+ ♣ (ou ♣ ≥ ♦), pas de majeure 5e → 1♣.",
+    "key_rule_en": "12-21 HCP, 4+ ♣ (or ♣ ≥ ♦), no 5-card major → 1♣."
+  }
+}

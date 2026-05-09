@@ -1,27 +1,20 @@
 /**
  * Registre de toutes les donnes pré-construites + générateur
- * Utilisé pour la rotation et la sélection par niveau
+ * import.meta.glob charge automatiquement tous les JSON — pas d'import manuel nécessaire
  */
 import { generateRandomDeal } from './generator.js'
 
-import deal001 from './level1/001-impasse-pique.json'
-import deal002 from './level1/002-ouverture-1sa.json'
-import deal003 from './level1/003-ouverture-1pique.json'
-import deal004 from './level1/004-ouverture-1trefle.json'
-import deal005 from './level1/005-passe-main-faible.json'
-import deal006 from './level1/006-ouverture-2trefle.json'
-import deal007 from './level1/007-ouverture-2sa.json'
-import deal008 from './level1/008-ouverture-1carreau.json'
+// Chargement automatique de tous les fichiers JSON dans level1/ et level2/
+const l1Raw = import.meta.glob('./level1/*.json', { eager: true })
+const l2Raw = import.meta.glob('./level2/*.json', { eager: true })
 
-import deal101 from './level2/001-overcall-1pique.json'
-import deal102 from './level2/002-reponse-sous-pression.json'
-import deal103 from './level2/003-overcall-coeur.json'
+function sortedDeals(raw) {
+  return Object.entries(raw)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, mod]) => mod.default ?? mod)
+}
 
-export const ALL_DEALS = [
-  deal001, deal002, deal003, deal004,
-  deal005, deal006, deal007, deal008,
-  deal101, deal102, deal103,
-]
+export const ALL_DEALS = [...sortedDeals(l1Raw), ...sortedDeals(l2Raw)]
 
 /** Donnes disponibles pour un niveau donné */
 export const dealsForLevel = (level) =>
@@ -68,7 +61,6 @@ export const randomDeal = (level = 1) => {
   const lastIdx  = parseInt(localStorage.getItem(lastKey) ?? '-1', 10)
   let idx        = Math.floor(Math.random() * pool.length)
 
-  // Éviter la répétition immédiate
   if (idx === lastIdx && pool.length > 1) {
     idx = (idx + 1) % pool.length
   }
