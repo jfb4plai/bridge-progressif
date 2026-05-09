@@ -5,7 +5,7 @@
  */
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { SUIT_SYMBOLS } from '../engine/cards.js'
 import { bidStr } from '../engine/bidding/auction.js'
 import BiddingHistory, { AiBidReadout } from '../components/BiddingHistory.jsx'
@@ -50,6 +50,7 @@ export default function DealDebrief({ profile }) {
   }
 
   const { deal, contract, evaluations = [], auctionHistory = [], totalXpDelta = 0 } = state
+  const [showAllHands, setShowAllHands] = useState(false)
 
   // ─── Contrat ────────────────────────────────────────────────────────────────
   const contractStr = contract
@@ -93,18 +94,32 @@ export default function DealDebrief({ profile }) {
         </button>
       </div>
 
-      {/* Toutes les mains (table fictive) */}
-      <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
-        <div className="text-xs text-stone-500 mb-3 font-semibold uppercase tracking-wide">
-          {lang === 'fr' ? 'Les 4 mains' : 'All 4 hands'}
-        </div>
-        <BridgeTable
-          deal={deal}
-          revealSeats={['N', 'S', 'E', 'W']}
-          currentTrick={[]}
-          lang={lang}
-          compact
-        />
+      {/* Toutes les mains — collapsible, fermé par défaut (spoiler si on joue) */}
+      <div className="rounded-xl border border-stone-200 bg-stone-50 overflow-hidden">
+        <button
+          onClick={() => setShowAllHands(o => !o)}
+          className="w-full flex items-center justify-between px-4 py-2.5 text-stone-600 hover:bg-stone-100 transition-colors"
+        >
+          <span className="font-semibold text-xs uppercase tracking-wide">
+            {lang === 'fr' ? 'Les 4 mains' : 'All 4 hands'}
+          </span>
+          <span className="text-stone-400 text-xs">
+            {showAllHands
+              ? '▲'
+              : (lang === 'fr' ? '▼  révèle les jeux E/O' : '▼  reveals E/W hands')}
+          </span>
+        </button>
+        {showAllHands && (
+          <div className="bg-white pb-4">
+            <BridgeTable
+              deal={deal}
+              revealSeats={['N', 'S', 'E', 'W']}
+              currentTrick={[]}
+              lang={lang}
+              compact
+            />
+          </div>
+        )}
       </div>
 
       {/* Main de Sud (vraies cartes) */}
