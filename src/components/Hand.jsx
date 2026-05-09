@@ -33,6 +33,26 @@ export default function Hand({
     return <CompactHand hand={sorted} lang={lang} label={label} />
   }
 
+  // Mains face cachée en vertical : pile compacte + compteur
+  if (faceDown && orientation === 'vertical') {
+    const stack = sorted.slice(0, 3)
+    return (
+      <div className="flex flex-col items-center gap-1">
+        {label && <span className="text-xs font-semibold text-stone-500 mb-1">{label}</span>}
+        <div className="relative flex flex-col items-center">
+          {stack.map((card, i) => (
+            <div key={cardKey(card)} style={{ marginTop: i > 0 ? '-32px' : 0 }}>
+              <Card card={card} lang={lang} faceDown size={size} />
+            </div>
+          ))}
+        </div>
+        {sorted.length > 0 && (
+          <span className="text-xs text-stone-400 mt-1">×{sorted.length}</span>
+        )}
+      </div>
+    )
+  }
+
   if (orientation === 'vertical') {
     return (
       <div className="flex flex-col items-center gap-1">
