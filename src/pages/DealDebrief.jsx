@@ -8,8 +8,9 @@ import { useTranslation } from 'react-i18next'
 import { useEffect, useRef } from 'react'
 import { SUIT_SYMBOLS } from '../engine/cards.js'
 import { bidStr } from '../engine/bidding/auction.js'
-import BiddingHistory from '../components/BiddingHistory.jsx'
+import BiddingHistory, { AiBidReadout } from '../components/BiddingHistory.jsx'
 import Hand from '../components/Hand.jsx'
+import BridgeTable from '../components/BridgeTable.jsx'
 import { handHcp } from '../engine/cards.js'
 import { supabase } from '../lib/supabase.js'
 import { saveBiddingSession } from '../lib/sessions.js'
@@ -92,12 +93,26 @@ export default function DealDebrief({ profile }) {
         </button>
       </div>
 
-      {/* Main de Sud */}
+      {/* Toutes les mains (table fictive) */}
       <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
+        <div className="text-xs text-stone-500 mb-3 font-semibold uppercase tracking-wide">
+          {lang === 'fr' ? 'Les 4 mains' : 'All 4 hands'}
+        </div>
+        <BridgeTable
+          deal={deal}
+          revealSeats={['N', 'S', 'E', 'W']}
+          currentTrick={[]}
+          lang={lang}
+          compact
+        />
+      </div>
+
+      {/* Main de Sud (vraies cartes) */}
+      <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm overflow-x-auto">
         <div className="text-xs text-stone-500 mb-3 font-semibold uppercase tracking-wide">
           {lang === 'fr' ? 'Votre main (Sud)' : 'Your hand (South)'} — {handHcp(deal.south)} H
         </div>
-        <Hand hand={deal.south} lang={lang} compact size="md" />
+        <Hand hand={deal.south} lang={lang} size="sm" />
       </div>
 
       {/* Contrat final */}
@@ -170,13 +185,16 @@ export default function DealDebrief({ profile }) {
         </div>
       )}
 
-      {/* Séquence complète */}
+      {/* Séquence complète + lecture des bids IA */}
       <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
         <div className="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">
           {lang === 'fr' ? 'Séquence complète' : 'Full auction'}
         </div>
         {auctionHistory.length > 0
-          ? <BiddingHistory history={auctionHistory} dealer={deal.dealer} lang={lang} />
+          ? <>
+              <BiddingHistory history={auctionHistory} dealer={deal.dealer} lang={lang} />
+              <AiBidReadout history={auctionHistory} lang={lang} />
+            </>
           : <p className="text-xs text-stone-400">{lang === 'fr' ? 'Aucune enchère enregistrée.' : 'No bids recorded.'}</p>
         }
       </div>
@@ -200,19 +218,30 @@ export default function DealDebrief({ profile }) {
       )}
 
       {/* Navigation */}
-      <div className="flex gap-3 pt-1">
-        <button
-          onClick={() => navigate('/bidding')}
-          className="flex-1 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors"
-        >
-          {lang === 'fr' ? 'Donne suivante' : 'Next deal'}
-        </button>
-        <button
-          onClick={() => navigate('/')}
-          className="flex-1 py-2.5 rounded-xl bg-stone-100 text-stone-700 font-semibold hover:bg-stone-200 transition-colors"
-        >
-          {t('debrief.back_dashboard')}
-        </button>
+      <div className="flex flex-col gap-3 pt-1">
+        {/* Jouer la donne — seulement si contrat valide (pas tous passent) */}
+        {contract && (
+          <button
+            onClick={() => navigate('/play', { state: { deal, contract } })}
+            className="w-full py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
+          >
+            {lang === 'fr' ? 'Jouer cette donne' : 'Play this hand'}
+          </button>
+        )}
+        <div className="flex gap-3">
+          <button
+            onClick={() => navigate('/bidding')}
+            className="flex-1 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors"
+          >
+            {lang === 'fr' ? 'Donne suivante' : 'Next deal'}
+          </button>
+          <button
+            onClick={() => navigate('/')}
+            className="flex-1 py-2.5 rounded-xl bg-stone-100 text-stone-700 font-semibold hover:bg-stone-200 transition-colors"
+          >
+            {t('debrief.back_dashboard')}
+          </button>
+        </div>
       </div>
     </div>
   )

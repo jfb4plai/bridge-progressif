@@ -9,8 +9,9 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import Hand from '../components/Hand.jsx'
+import BridgeTable from '../components/BridgeTable.jsx'
 import BiddingBox from '../components/BiddingBox.jsx'
-import BiddingHistory from '../components/BiddingHistory.jsx'
+import BiddingHistory, { AiBidReadout } from '../components/BiddingHistory.jsx'
 import HintPanel from '../components/HintPanel.jsx'
 
 import {
@@ -52,6 +53,9 @@ export default function BiddingPractice({ profile, onXpGain }) {
   // Indices
   const [hintRevealed, setHintR] = useState(false)
   const [hintsUsed,    setHintsU] = useState(0)
+
+  // Affichage table
+  const [showTable, setShowTable] = useState(false)
 
   // ─── Démarrer / redémarrer ──────────────────────────────────────────────────
   const startAuction = useCallback((currentDeal) => {
@@ -165,11 +169,11 @@ export default function BiddingPractice({ profile, onXpGain }) {
       </div>
 
       {/* Main de Sud */}
-      <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
+      <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm overflow-x-auto">
         <div className="text-xs text-stone-500 mb-3 font-semibold uppercase tracking-wide">
           {t('bidding.your_hand')} — {hcp} H
         </div>
-        <Hand hand={deal.south} lang={lang} compact size="md" />
+        <Hand hand={deal.south} lang={lang} size="sm" />
       </div>
 
       {/* Rappel comptage HCP */}
@@ -178,13 +182,38 @@ export default function BiddingPractice({ profile, onXpGain }) {
       {/* Règles des annonces */}
       <BiddingRules lang={lang} level={level} />
 
-      {/* Historique enchères */}
+      {/* Table fictive (toggle) */}
+      <div className="rounded-xl border border-stone-200 bg-stone-50 overflow-hidden">
+        <button
+          onClick={() => setShowTable(o => !o)}
+          className="w-full flex items-center justify-between px-4 py-2.5 text-stone-600 hover:bg-stone-100 transition-colors"
+        >
+          <span className="font-semibold text-xs uppercase tracking-wide">
+            {lang === 'fr' ? 'Table de bridge' : 'Bridge table'}
+          </span>
+          <span className="text-stone-400 text-xs">{showTable ? '▲' : '▼'}</span>
+        </button>
+        {showTable && (
+          <div className="pb-4">
+            <BridgeTable
+              deal={deal}
+              revealSeats={['S']}
+              currentTrick={[]}
+              lang={lang}
+              compact
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Historique enchères + lecture des bids IA */}
       {auctionHistory.length > 0 && (
         <div className="bg-white rounded-xl border border-stone-200 p-4 shadow-sm">
           <div className="text-xs text-stone-500 mb-2 font-semibold uppercase tracking-wide">
             {t('bidding.history')}
           </div>
           <BiddingHistory history={auctionHistory} dealer={deal.dealer} lang={lang} />
+          <AiBidReadout history={auctionHistory} lang={lang} />
         </div>
       )}
 

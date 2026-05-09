@@ -4,10 +4,13 @@
  *   history   [{seat, bid}]
  *   dealer    'N'|'E'|'S'|'W'
  *   lang      'fr'|'en'
+ *
+ * Exporte aussi AiBidReadout — annotations des bids IA sous la table
  */
 
 import { SUIT_SYMBOLS } from '../engine/cards.js'
 import { bidStr } from '../engine/bidding/standard-francais.js'
+import { OPENING_EXPLANATIONS, RESPONSE_EXPLANATIONS } from '../engine/bidding/standard-francais.js'
 import { useTranslation } from 'react-i18next'
 
 const SEAT_ORDER = ['W', 'N', 'E', 'S']  // ordre standard tableau enchères
@@ -24,6 +27,42 @@ const BidDisplay = ({ bid, lang }) => {
     <span className={`font-semibold ${SUIT_COLORS_INLINE[bid.suit] ?? ''}`}>
       {bid.level}{suitStr}
     </span>
+  )
+}
+
+const SEAT_LABELS = { fr: { N:'Nord', E:'Est', W:'Ouest', S:'Sud' }, en: { N:'North', E:'East', W:'West', S:'South' } }
+
+// Couleurs par camp : partenaire (N) = emerald, adversaires (E/W) = amber
+const SEAT_COLOR = { N: 'text-emerald-700', S: 'text-emerald-700', E: 'text-amber-700', W: 'text-amber-700' }
+
+/**
+ * Annotations pédagogiques sous la table — explique chaque bid IA (N/E/W)
+ * Props: history (avec aiKey), lang
+ */
+export function AiBidReadout({ history = [], lang = 'fr' }) {
+  const labels = SEAT_LABELS[lang] ?? SEAT_LABELS.fr
+  const aiBids = history.filter(h => h.isAi && h.aiKey)
+  if (aiBids.length === 0) return null
+
+  return (
+    <div className="mt-3 space-y-1.5 border-t border-stone-100 pt-3">
+      {aiBids.map((h, i) => {
+        const expl = (OPENING_EXPLANATIONS[h.aiKey] ?? RESPONSE_EXPLANATIONS[h.aiKey])?.[lang]
+        if (!expl) return null
+        return (
+          <div key={i} className="flex gap-2 items-baseline text-xs">
+            <span className={`font-semibold w-10 shrink-0 ${SEAT_COLOR[h.seat]}`}>
+              {labels[h.seat]}
+            </span>
+            <span className="font-card font-bold text-stone-800 w-8 shrink-0">
+              {bidStr(h.bid)}
+            </span>
+            <span className="text-stone-400 shrink-0">—</span>
+            <span className="text-stone-500 leading-snug">{expl}</span>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 

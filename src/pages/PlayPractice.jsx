@@ -4,7 +4,7 @@
  */
 import { useState, useEffect, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import BridgeTable from '../components/BridgeTable.jsx'
 import { cardKey, SUIT_SYMBOLS } from '../engine/cards.js'
@@ -19,11 +19,13 @@ const ORDER = ['W', 'N', 'E', 'S']
 export default function PlayPractice({ profile, onXpGain }) {
   const { t }    = useTranslation()
   const navigate = useNavigate()
+  const location = useLocation()
   const lang     = profile?.lang ?? 'fr'
   const xp       = profile?.xp  ?? 0
 
-  const deal     = dealData
-  const contract = deal.optimal_contract
+  // Accepte deal+contract depuis le bilan d'enchères, sinon démo par défaut
+  const deal     = location.state?.deal     ?? dealData
+  const contract = location.state?.contract ?? deal.optimal_contract
   const trump    = contract.suit
 
   // État des mains (cartes retirées au fil du jeu)
@@ -120,12 +122,19 @@ export default function PlayPractice({ profile, onXpGain }) {
     advance(newTrick, newHands)
   }, [phase, legalSud, trick, hands, advance])
 
-  // Initialiser : Ouest entame
+  // Initialiser : Ouest entame (lead défini ou IA)
   useEffect(() => {
-    const westLead  = deal.play_line?.opening_lead
-    if (!westLead) return
-    const lead      = deal.west.find(c => c.suit === westLead.suit && c.rank === westLead.rank)
+    const westLead = deal.play_line?.opening_lead
+    let lead = westLead
+      ? deal.west.find(c => c.suit === westLead.suit && c.rank === westLead.rank)
+      : null
+
+    // Si pas d'entame définie, l'IA choisit pour Ouest
+    if (!lead) {
+      lead = aiPlay('W', [], hands)
+    }
     if (!lead) return
+
     const firstTrick = [{ seat: 'W', card: lead }]
     const h0 = { ...hands, W: hands.W.filter(c => cardKey(c) !== cardKey(lead)) }
     setHands(h0)
