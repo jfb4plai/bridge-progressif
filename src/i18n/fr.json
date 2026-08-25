@@ -19,7 +19,16 @@
     "login_btn": "Se connecter",
     "register_btn": "Créer un compte",
     "no_account": "Pas encore de compte ?",
-    "has_account": "Déjà un compte ?"
+    "has_account": "Déjà un compte ?",
+    "forgot_password": "Mot de passe oublié ?",
+    "reset_title": "Mot de passe oublié",
+    "reset_subtitle": "Entrez votre email pour recevoir un lien de réinitialisation.",
+    "reset_btn": "Envoyer le lien",
+    "reset_sent": "Email envoyé ! Vérifiez votre boîte mail.",
+    "back_to_login": "← Retour à la connexion",
+    "new_password_title": "Nouveau mot de passe",
+    "new_password": "Nouveau mot de passe",
+    "save_btn": "Enregistrer"
   },
   "dashboard": {
     "level": "Niveau",

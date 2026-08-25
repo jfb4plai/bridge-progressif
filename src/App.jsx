@@ -14,10 +14,14 @@ import DealDebrief        from './pages/DealDebrief.jsx'
 
 export default function App() {
   const [session, setSession] = useState(undefined)  // undefined = loading
+  const [passwordRecovery, setPasswordRecovery] = useState(false)
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session))
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, s) => setSession(s))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((e, s) => {
+      if (e === 'PASSWORD_RECOVERY') setPasswordRecovery(true)
+      setSession(s)
+    })
     return () => subscription.unsubscribe()
   }, [])
 
@@ -41,7 +45,9 @@ VITE_SUPABASE_ANON_KEY=votre_clé_anon`}
     return <div className="min-h-screen flex items-center justify-center text-stone-400">…</div>
   }
 
-  if (!session) return <Auth />
+  if (!session || passwordRecovery) {
+    return <Auth passwordRecovery={passwordRecovery} onPasswordUpdated={() => setPasswordRecovery(false)} />
+  }
 
   return (
     <BrowserRouter>

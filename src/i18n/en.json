@@ -19,7 +19,16 @@
     "login_btn": "Log in",
     "register_btn": "Create account",
     "no_account": "No account yet?",
-    "has_account": "Already have an account?"
+    "has_account": "Already have an account?",
+    "forgot_password": "Forgot password?",
+    "reset_title": "Forgot password",
+    "reset_subtitle": "Enter your email to receive a reset link.",
+    "reset_btn": "Send link",
+    "reset_sent": "Email sent! Check your inbox.",
+    "back_to_login": "← Back to login",
+    "new_password_title": "New password",
+    "new_password": "New password",
+    "save_btn": "Save"
   },
   "dashboard": {
     "level": "Level",
